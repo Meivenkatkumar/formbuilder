@@ -33,7 +33,7 @@ while($index<$ind)
    $string='response_'.$index;
     if($fieldtype=="text" || $fieldtype=="num" || $fieldtype=="radiobtn")
     {
-     $response=$_POST[$string];
+     $response=mysqli_real_escape_string($conn,$_POST[$string]);
      $sql="INSERT INTO records (creator, formname, fieldname, fieldtype, fielddesc, response, username) VALUES ('".$creator."', '".$formname."', '".$fieldname."', '".$fieldtype."', '".$fielddesc."', '".$response."', '".$name."')";
        if(!mysqli_query($conn, $sql))
        {
