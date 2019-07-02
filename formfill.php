@@ -43,7 +43,7 @@ if(isset($_SESSION['NAME']))
     $name=$_SESSION['NAME'];
     $formname=$_SESSION['formname'];
     $_SESSION['formname']=$formname;
-    $sql="SELECT fieldname FROM records WHERE formname='".$formname."'";
+    $sql="SELECT fieldname FROM structure WHERE formname='".$formname."'";
     if(!$conn->query($sql))
     {
       header("Location:../formfill.php?error=1");
@@ -173,14 +173,14 @@ if(isset($_SESSION['NAME']))
     }
     else
     {
-      echo "SORRY";
+      echo "<h2>SORRY</h2>";
       if($hourdiff >= $timelimit)
       {
-      echo "TimeOver";
+      echo "<h3>Time Over</h3>";
       }
       else if($number >= $userlimit)
       {
-      echo "User limit approached";
+      echo "<h3>User limit approached</h3>";
       }
     }
   }
