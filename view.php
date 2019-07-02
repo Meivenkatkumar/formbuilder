@@ -244,8 +244,6 @@ if(isset($_POST['viewbutton']) && !empty($_POST['viewform']) && isset($_SESSION[
         percent1=(iovalues[index]/count)*100;
         percent1=Math.round(percent1*10)/10;
         percent0=100-percent1;
-        alert(percent1);
-        alert(percent0);
         check=namefield[index];
         c.fillStyle="rgb(0,0,0)";
         c.font="30px verdana";
@@ -275,7 +273,7 @@ if(isset($_POST['viewbutton']) && !empty($_POST['viewform']) && isset($_SESSION[
         c.fillStyle="rgb(0,0,0)";
         c.font="bold 20px verdana";
         c.fillText(percent0+"%",(percent0*4)+55,y+110);
-        y=y+80;
+        y=y+120;
         index=index+1;
     }
 </script> 
